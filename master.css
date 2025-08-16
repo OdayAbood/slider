@@ -1,0 +1,309 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+}
+body{
+    background:linear-gradient(rgb(41, 38, 38),rgb(43, 41, 41));
+}
+header{
+    width: 1140px;
+    max-width: 80%;
+    height: 50px;
+    z-index: 100;
+    position: absolute
+}
+header ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+header ul a {
+    color: black;
+    background: linear-gradient(45deg, #fffefe, transparent);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+li:hover a{
+    color: rgb(255, 255, 255);
+    background: linear-gradient(45deg, #000000, transparent);
+}
+.container{
+    position: relative;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+    width: 100em;
+    height:100vh;
+    max-width: 100%;
+}
+.container .item{
+    position: absolute;
+    width: 100em;
+    height: calc(100vh - 4px);
+    max-width: 100%
+}
+.container .list .item:nth-child(1){
+    z-index: 1;
+}
+.container .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.container .item .cont{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%, -50%);
+}
+@keyframes atrn{
+    100%{
+        filter: blur(0px);
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+.container .item:nth-child(1) .cont .titlle,
+.container .item:nth-child(1) .cont .name,
+.container .item:nth-child(1) .cont .des,
+.container .item:nth-child(1) .cont .buttons,
+.container .item:nth-child(1) .cont p {
+    opacity: 0;
+    filter: blur(9px);
+    transform: translatey(70px);
+    animation-name: atrn;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+.container .item .cont .titlle{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #E91E63, #673ab700, #79554800, #9c27b000, transparent 139%); 
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    animation-delay: 1.2s;
+    border-radius: 3px;
+}
+.container .item .cont .name{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    animation-delay: 1.4s;
+    background: linear-gradient(45deg, #e91e6300, #673AB7, #00968800, #9C27B0, transparent 70%);
+    border-radius: 3px;
+}
+.container .item .cont p{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #FF5722;
+    margin-top: 10px;
+    text-shadow: -4px -4px 5px black;
+    border-radius: 5px;
+    animation-delay: 1.6s;
+}
+.container .item .cont .des{
+    width: 400px;
+line-height: 2.5;
+font-size: 15px;
+font-weight: bold;
+color: #ffffff;
+animation-delay: 1.8s;
+text-shadow: -4px -4px 5px #673AB7;
+}
+.container .item .cont .buttons{
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    animation-delay: 2s;
+}
+.container .item .cont .buttons .more{
+    width: 180px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #F44336, transparent);
+}
+.container .item .cont .buttons .subs{
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #F44336, transparent);
+}
+.small{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 730px;
+    height: 300px;
+}
+.small .item1{
+    width: 175px;
+    height: 300px;
+}
+.small .item1:not(:last-child){
+    margin-right: 10px;
+}
+
+.small .item1 img{
+    border-radius: 30px;
+    width: 100%;
+    height: 100%
+}
+.move{
+    z-index: 100;
+    position: absolute;
+    display: flex
+;
+    bottom: 15%;
+    left: 20%;
+}
+.move .left{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #00000075;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform: translateX(-40px);
+}
+.move .right{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #00000075;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.next .list .item:nth-child(1) img{
+    width: 175px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 30px;
+    animation: outimg 1s linear 1 forwards;
+}  
+.next .small .item1:nth-child(4) img{
+    width: 0;
+    animation: showimg 0.5s linear 1 forwards ;
+}
+@keyframes showimg{
+    to{
+        width:100%;
+    }
+}
+.next .small {
+    animation: showsmall 0.5s linear 1 both ;
+}
+@keyframes showsmall{
+    from{
+        transform: translateX(-185px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+@keyframes outimg{
+    to{
+        border-radius: 0px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.prev .list .item:nth-child(2) img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: showimg 1s linear 1 forwards ;
+    z-index: 2;
+}
+@keyframes showimg{
+    to{
+    width: 175px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    border-radius: 30px;
+        max-width: 100%
+    }
+}
+.prev .small .item1:nth-child(2) img{
+    width:0;
+    animation: showimg 0.5s linear 1 forwards ;
+}
+.next .list .item:nth-child(4) .cont .titlle,
+.next .list .item:nth-child(4) .cont .buttons,
+.next .list .item:nth-child(4) .cont p,
+.next .list .item:nth-child(4) .cont .name,
+.next .list .item:nth-child(4) .cont .des
+
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media (max-width:767px) {
+    .container .list .item .cont{
+        left: 5%;
+        top: 30%;
+    }
+    .container .item .cont .des {
+        line-height: 1.8;
+    }
+    .container .item .cont .titlle {
+        font-size: 15px;
+    }
+    .container .item .cont p {
+        font-size: 25px;
+    }
+    .container .item .cont .name {
+        font-size: 16px;
+    }
+}
+.next .move,
+.prev .move{
+    pointer-events: none;
+}
